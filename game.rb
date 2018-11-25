@@ -5,7 +5,7 @@ require 'pry'
 class Game
   attr_accessor :p_choice, :c_choice
 
-  def initialize(p_choice = 'r')
+  def initialize(p_choice = '')
     @p_choice = p_choice.downcase
     @c_choice = ['s','r','p'].sample
   end
@@ -32,7 +32,7 @@ class Game
           @p_choice  == 'p' &&  @c_choice == 'r'
       outcome = "Player win!\nComputer loose!"
     else
-      outcome = "Invalid result! Either computer or player made invalid choice."
+      outcome = "Either computer or player made invalid choice."
     end
     return outcome
   end
