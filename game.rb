@@ -1,5 +1,7 @@
 # YOUR CODE GOES HERE
 require 'pry'
+
+# create game class
 class Game
   attr_accessor :p_choice, :c_choice
 
@@ -37,14 +39,18 @@ class Game
 end
 
 # Start the game
-
-input = nil
-
 puts "Welcome to the Rock-Paper-Scissors!"
+puts "Please, enter rock(r), paper(p), scissors(s) or stop: "
+input = gets.chomp
+
 while input != 'stop'
-  input = gets.chomp
   game = Game.new(input)
   puts
   puts game.output_choice
   puts game.result
+
+  puts "\nPlease, enter rock(r), paper(p), scissors(s) or stop: "
+  input = gets.chomp
 end
+
+puts "Thank you for playing Rock-Paper-Scissors!"
