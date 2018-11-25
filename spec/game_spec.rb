@@ -16,40 +16,40 @@ RSpec.describe Game do
                 ]
 
   describe ".p_choice" do
-    it "initializes player's choice" do
+    it "should initialize player's choice" do
       expect(game.p_choice).to eq('s')
     end
   end
 
   describe ".c_choice" do
-    it "initilizes computer choice" do
+    it "should initilize computer choice" do
       expect(game.c_choice).to eq('s').or eq('r').or eq('p')
     end
   end
 
   describe ".output_choice" do
-    it "returns choice made by player" do
+    it "should return choice made by player" do
       expect(output).to include("Player choose: #{game.p_choice}")
     end
-    it "returns choice made by computer" do
+    it "should return choice made by computer" do
       expect(output).to include("Computer choose: #{game.c_choice}")
     end
-    it "does not return 'invalid input msg' if player input invalid choice" do
+    it "should not return 'invalid input msg' if player made a valid choice" do
       expect(output).not_to eq(invalid_msg[0])
     end
-    it "returns 'invalid input msg' if player input invalid choice" do
+    it "should return 'invalid input msg' if player made invalid choice" do
       expect(game_2.output_choice).to eq(invalid_msg[0])
     end
   end
 
   describe ".result" do
-    it "returns game outcome_msg" do
+    it "should return game's outcome" do
       expect(game.result).to eq(outcome_msg[0]).or eq(outcome_msg[1]).or eq(outcome_msg[2])
     end
-    it "does not return" do
+    it "should not return 'invalid massage'" do
       expect(game.result).not_to eq(invalid_msg[1])
     end
-    it "returns 'invalid input message'" do
+    it "should return 'invalid input message'" do
       expect(game_2.result).to eq(invalid_msg[1])
     end
   end
